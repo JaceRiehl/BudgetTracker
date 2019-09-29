@@ -5,7 +5,7 @@ import * as serviceWorker from './serviceWorker';
 import {Route, BrowserRouter as Router} from 'react-router-dom'
 import LoginComponent from "./Login/login";
 import DashboardComponent from "./Dashboard/dashboard";
-import SignupComponent from "./Dashboard/styles";
+import SignupComponent from "./Signup/signup";
 
 const firebase = require('firebase');
 require('firebase/firestore');

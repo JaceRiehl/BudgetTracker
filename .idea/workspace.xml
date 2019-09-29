@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc82bda7-189d-4b1a-b31a-53b22e3e6856" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Dashboard/dashboard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Dashboard/styles.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Login/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Login/styles.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Signup/signup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Signup/styles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dashboard/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dashboard/styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Signup/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Signup/signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Signup/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Signup/styles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -68,7 +60,8 @@
       <option name="presentableId" value="Default" />
       <updated>1569686370165</updated>
       <workItem from="1569686371352" duration="1622000" />
-      <workItem from="1569692902732" duration="1358000" />
+      <workItem from="1569692902732" duration="1440000" />
+      <workItem from="1569771420110" duration="3637000" />
     </task>
     <servers />
   </component>

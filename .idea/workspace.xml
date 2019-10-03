@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="fc82bda7-189d-4b1a-b31a-53b22e3e6856" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dashboard/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dashboard/styles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Signup/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Signup/signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Login/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login/styles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Signup/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Signup/styles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +34,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.idesettings.emmet.jsx" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -62,6 +61,7 @@
       <workItem from="1569686371352" duration="1622000" />
       <workItem from="1569692902732" duration="1440000" />
       <workItem from="1569771420110" duration="3637000" />
+      <workItem from="1570061908434" duration="2412000" />
     </task>
     <servers />
   </component>

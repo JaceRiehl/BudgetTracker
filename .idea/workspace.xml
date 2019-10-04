@@ -2,16 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc82bda7-189d-4b1a-b31a-53b22e3e6856" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Header/header.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Header/styles.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main/maincomponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main/styles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Login/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login/styles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Signup/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Signup/styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -62,6 +71,7 @@
       <workItem from="1569692902732" duration="1440000" />
       <workItem from="1569771420110" duration="3637000" />
       <workItem from="1570061908434" duration="2412000" />
+      <workItem from="1570198287707" duration="10080000" />
     </task>
     <servers />
   </component>

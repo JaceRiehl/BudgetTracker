@@ -26,22 +26,23 @@ function SignUpComponent(props){
                         Sign Up
                     </Typography>
                     <form onSubmit={(e) => submitSignUp(e, email, password)} className={classes.form}>
+                        <FormControl required fullWidth margin ='normal'>
+                            <InputLabel htmlFor='signup-email-input'>Enter your email</InputLabel>
+                            <Input autoComplete='email' autoFocus id='signup-email-input' onChange={(e) => userTyping('email', e)}/>
+                        </FormControl>
 
-                    <FormControl required fullWidth margin ='normal'>
-                        <InputLabel htmlFor='signup-email-input'>Enter your email</InputLabel>
-                        <Input autoComplete='email' autoFocus id='signup-email-input' onChange={(e) => userTyping('email', e)}/>
-                    </FormControl>
+                        <FormControl required fullWidth margin='normal'>
+                            <InputLabel htmlFor='signup-password-input'>Create a password</InputLabel>
+                            <Input type='password' id='signup-password-input' onChange={(e) => userTyping('password', e)}/>
+                        </FormControl>
 
-                    <FormControl required fullWidth margin='normal'>
-                        <InputLabel htmlFor='signup-password-input'>Create a password</InputLabel>
-                        <Input type='password' id='signup-password-input' onChange={(e) => userTyping('password', e)}/>
-                    </FormControl>
-
-                    <FormControl required fullWidth margin='normal'>
-                        <InputLabel htmlFor='signup-password-confirmation-input'>Create a password</InputLabel>
-                        <Input type='password' id='signup-password-confirmation-input' onChange={(e) => userTyping('passwordConfirmation', e)}/>
-                    </FormControl>
-                    <Button type='submit' fullWidth variant='contained' color='primary' className={classes.submit}>Submit</Button>
+                        <FormControl required fullWidth margin='normal'>
+                            <InputLabel htmlFor='signup-password-confirmation-input'>Create a password</InputLabel>
+                            <Input type='password' id='signup-password-confirmation-input' onChange={(e) => userTyping('passwordConfirmation', e)}/>
+                        </FormControl>
+                        <Button type='submit' fullWidth variant='contained' color='primary' className={classes.submit}>
+                            Submit
+                        </Button>
                     </form>
                     {
                         signUpError ?
@@ -51,7 +52,9 @@ function SignUpComponent(props){
                             null
                     }
                     <Typography component='h5' variant='h6' className={classes.hasAccountHeader}>Already have an Account?</Typography>
-                    <Link className={classes.logInLink} to='/login'>Log In</Link>
+                    <Link className={classes.logInLink} to='/login'>
+                        Log In
+                    </Link>
                 </Paper>
             </main>);
 
@@ -105,10 +108,5 @@ function SignUpComponent(props){
                 })
         }
     }
-
-
-
-
-
 
 export default withStyles(styles)(SignUpComponent);

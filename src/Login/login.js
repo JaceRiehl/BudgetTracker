@@ -26,34 +26,32 @@ function LoginComponent(props) {
                 <Typography component='h1' variant='h5'>
                     Log In
                 </Typography>
-                <form className={classes.form} onSubmit={(e) => submitLogin(e, email, password, props, setLoginError)}>
+                <form className={classes.form} onSubmit={(e) => submitLogin(e, email, password)}>
                     <FormControl required fullWidth margin='normal'>
                         <InputLabel htmlFor='login-email-input'> Enter your Email</InputLabel>
-                        <Input autoComplete='email' autoFocus id='login-email-input' onChange={(e) => userTyping('email', e, setEmail, setPassword)}/>
+                        <Input autoComplete='email' autoFocus id='login-email-input' onChange={(e) => userTyping('email', e)}/>
                     </FormControl>
                     <FormControl required fullWidth margin='normal'>
                         <InputLabel htmlFor='login-password-input'> Enter your Password</InputLabel>
-                        <Input type='password' id='login-password-input' onChange={(e) => userTyping('password', e, setEmail, setPassword)}/>
+                        <Input type='password' id='login-password-input' onChange={(e) => userTyping('password', e)}/>
                     </FormControl>
-                    <Button className={classes.submit} type='submit' fullWidth variant='contained' color='primary'>Log
-                        in</Button>
+                    <Button className={classes.submit} type='submit' fullWidth variant='contained' color='primary'>
+                        Log in
+                    </Button>
                 </form>
                 {
                     loginError ?
-                        <Typography component='h5' variant='h6' className={classes.errorText}>Incorrect Login
-                            Question</Typography>
+                        <Typography component='h5' variant='h6' className={classes.errorText}>
+                            Incorrect Login Question
+                        </Typography>
                         : null
                 }
-                <Typography component='h5' variant='h6' className={classes.noAccountHeader}>Don't have an
-                    account?</Typography>
+                <Typography component='h5' variant='h6' className={classes.noAccountHeader}>Don't have an account?</Typography>
                 <Link className={classes.signUpLink} to='/signup'>Sign Up!</Link>
             </Paper>
+        </main>);
 
-        </main>)
-}
-
-
-    async function submitLogin(e, email, password, props, setLoginError) {
+    async function submitLogin(e, email, password) {
         e.preventDefault();
 
         await firebase
@@ -65,8 +63,9 @@ function LoginComponent(props) {
                 setLoginError('Server Error');
                 console.log(err)
             });
-        }
-    function userTyping(type, e, setEmail, setPassword){
+    }
+
+    function userTyping(type, e){
         switch(type) {
             case 'email':
                 setEmail(e.target.value);
@@ -78,6 +77,6 @@ function LoginComponent(props) {
                 break;
         }
     }
-
+}
 
 export default withStyles(styles)(LoginComponent);

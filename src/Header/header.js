@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import AppBar from "@material-ui/core/AppBar";
 import {Link} from 'react-router-dom'
 import FormControl from '@material-ui/core/FormControl'
@@ -14,16 +14,9 @@ import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import styles from './styles'
 
-class Header extends React.Component {
-    constructor(){
-        super();
-        this.state = {
-            errorText: '',
-            hideAppBar: false
-        }
-    }
-    render(){
-        const {classes} = this.props;
+function Header(props){
+    const [errorText, setErrorText] = useState('');
+    const {classes} = props;
         return(
             <div className={classes.rootHeader}>
                 <AppBar position='static'>
@@ -39,11 +32,7 @@ class Header extends React.Component {
             </div>
         )
     }
-    hideAppBar = (e) => {
-        this.setState({hideAppBar: true})
-        console.log(this.state.hideAppBar);
-    }
-}
+
 
 
 

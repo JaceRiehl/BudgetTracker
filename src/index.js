@@ -33,7 +33,7 @@ const routing = (
             <Route path='/dashboard' component={DashboardComponent}></Route>
         </div>
     </Router>
-)
+);
 
 ReactDOM.render(routing, document.getElementById('root'));
 

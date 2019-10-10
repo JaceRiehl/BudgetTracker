@@ -5,7 +5,7 @@ import * as serviceWorker from './serviceWorker';
 import {Route, BrowserRouter as Router} from 'react-router-dom'
 import LoginComponent from "./Login/login";
 import DashboardComponent from "./Dashboard/dashboard";
-import SignupComponent from "./Signup/signup";
+import SignUpComponent from "./Signup/signup";
 import MainComponent from './Main/maincomponent'
 
 const firebase = require('firebase');
@@ -29,11 +29,11 @@ const routing = (
         <div id='routing-container'>
             <Route exact path='/' component={MainComponent}></Route>
             <Route path='/login' component={LoginComponent}></Route>
-            <Route path='/signup' component={SignupComponent}></Route>
+            <Route path='/signup' component={SignUpComponent}></Route>
             <Route path='/dashboard' component={DashboardComponent}></Route>
         </div>
     </Router>
-)
+);
 
 ReactDOM.render(routing, document.getElementById('root'));
 

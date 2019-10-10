@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 import FormControl from '@material-ui/core/FormControl'
 import InputLabel from '@material-ui/core/InputLabel'
@@ -11,25 +11,17 @@ import Button from '@material-ui/core/Button'
 import styles from './styles'
 import Header from '../Header/header'
 
-class MainComponent extends React.Component {
-    constructor(){
-        super();
-        this.state = {
-            errorText: ''
-        }
-    }
-    render(){
-        const {classes} = this.props;
-        return(
-            <main className={classes.main}>
-                <CssBaseLine></CssBaseLine>
-                <Header></Header>
-                <Paper className={classes.paper}>
+function MainComponent(props){
+    const {classes} = props;
+    return(
+        <main className={classes.main}>
+            <CssBaseLine/>
+            <Header/>
+            <Paper className={classes.paper}>
 
-                </Paper>
-            </main>
-        )
-    }
+            </Paper>
+        </main>
+    )
 }
 
 export default withStyles(styles)(MainComponent)

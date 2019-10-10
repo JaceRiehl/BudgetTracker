@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 import FormControl from '@material-ui/core/FormControl'
 import InputLabel from '@material-ui/core/InputLabel'
@@ -11,106 +11,102 @@ import Button from '@material-ui/core/Button'
 import styles from './styles'
 const firebase = require('firebase');
 
-class SignupComponent extends React.Component {
-    constructor(){
-        super();
-        this.state = {
-            email: null,
-            password: null,
-            passwordConfirmation: null,
-            signupError: ''
-        };
-    }
-    render() {
-        const {classes} = this.props;
+function SignUpComponent(props){
+    const [email, setEmail] = useState(null);
+    const [password, setPassword] = useState(null);
+    const [passwordConfirmation, setPasswordConfirmation] = useState(null);
+    const [signUpError, setSignUpError] = useState('');
+    const {classes} = props;
 
         return(
             <main className={classes.main}>
-                <CssBaseLine></CssBaseLine>
+                <CssBaseLine/>
                 <Paper className={classes.paper}>
                     <Typography component='h1' variant='h5'>
                         Sign Up
                     </Typography>
-                    <form onSubmit={(e) => this.submitSignup(e)} className={classes.form}>
+                    <form onSubmit={(e) => submitSignUp(e, email, password)} className={classes.form}>
+                        <FormControl required fullWidth margin ='normal'>
+                            <InputLabel htmlFor='signup-email-input'>Enter your email</InputLabel>
+                            <Input autoComplete='email' autoFocus id='signup-email-input' onChange={(e) => userTyping('email', e)}/>
+                        </FormControl>
 
-                    <FormControl required fullWidth margin ='normal'>
-                        <InputLabel htmlFor='signup-email-input'>Enter your email</InputLabel>
-                        <Input autoComplete='email' autoFocus id='signup-email-input' onChange={(e) => this.userTyping('email', e)}></Input>
-                    </FormControl>
+                        <FormControl required fullWidth margin='normal'>
+                            <InputLabel htmlFor='signup-password-input'>Create a password</InputLabel>
+                            <Input type='password' id='signup-password-input' onChange={(e) => userTyping('password', e)}/>
+                        </FormControl>
 
-                    <FormControl required fullWidth margin='normal'>
-                        <InputLabel htmlFor='signup-password-input'>Create a password</InputLabel>
-                        <Input type='password' id='signup-password-input' onChange={(e) => this.userTyping('password', e)}></Input>
-                    </FormControl>
-
-                    <FormControl required fullWidth margin='normal'>
-                        <InputLabel htmlFor='signup-password-confirmation-input'>Create a password</InputLabel>
-                        <Input type='password' id='signup-password-confirmation-input' onChange={(e) => this.userTyping('passwordConfirmation', e)}></Input>
-                    </FormControl>
-                    <Button type='submit' fullWidth variant='contained' color='primary' className={classes.submit}>Submit</Button>
+                        <FormControl required fullWidth margin='normal'>
+                            <InputLabel htmlFor='signup-password-confirmation-input'>Create a password</InputLabel>
+                            <Input type='password' id='signup-password-confirmation-input' onChange={(e) => userTyping('passwordConfirmation', e)}/>
+                        </FormControl>
+                        <Button type='submit' fullWidth variant='contained' color='primary' className={classes.submit}>
+                            Submit
+                        </Button>
                     </form>
                     {
-                        this.state.signupError ?
+                        signUpError ?
                             <Typography className={classes.errorText} component='h5' variant='h6'>
-                                {this.state.signupError}
+                                {signUpError}
                             </Typography> :
                             null
                     }
                     <Typography component='h5' variant='h6' className={classes.hasAccountHeader}>Already have an Account?</Typography>
-                    <Link className={classes.logInLink} to='/login'>Log In</Link>
+                    <Link className={classes.logInLink} to='/login'>
+                        Log In
+                    </Link>
                 </Paper>
-            </main>)
-    }
+            </main>);
 
-    formIsValid = () => this.state.password === this.state.passwordConfirmation;
-
-    userTyping = (type, e) => {
-        switch(type){
-            case 'email' :
-                this.setState({email: e.target.value});
-                break;
-            case 'password' :
-                this.setState({password: e.target.value});
-                break;
-            case 'passwordConfirmation' :
-                this.setState({passwordConfirmation: e.target.value});
-                break;
-            default:
-                break;
+        function formIsValid() {
+           return password === passwordConfirmation;
         }
-    };
-
-    submitSignup = (e) => {
-        e.preventDefault();
-
-        if(!this.formIsValid()) {
-            this.setState({signupError: 'Passwords don\'t match'})
-            return;
+         function userTyping(type, e){
+            switch(type){
+                case 'email' :
+                    setEmail(e.target.value);
+                    break;
+                case 'password' :
+                    setPassword(e.target.value);
+                    break;
+                case 'passwordConfirmation' :
+                    setPasswordConfirmation(e.target.value);
+                    break;
+                default:
+                    break;
+            }
         }
 
-        firebase.auth()
-            .createUserWithEmailAndPassword(this.state.email, this.state.password)
-            .then(authRes => {
-                const userObj = {
-                    email: authRes.user.email
-                };
-                firebase
-                    .firestore()
-                    .collection('user')
-                    .doc(this.state.email)
-                    .set(userObj)
-                    .then(() => {
-                        this.props.history.push('/dashboard')
-                    }, dbError => {
-                        console.log(dbError);
-                        this.setState({signupError: 'Failed to add user'});
-                    })
-                    }, authError => {
-                        console.log(authError);
-                        this.setState({signupError: 'Failed to add user'});
-                    })
+        function submitSignUp(e, email, password){
+            e.preventDefault();
+
+            if(!formIsValid()) {
+                setSignUpError('Passwords don\'t match')
+                return;
+            }
+
+            firebase.auth()
+                .createUserWithEmailAndPassword(email, password)
+                .then(authRes => {
+                    const userObj = {
+                        email: authRes.user.email
+                    };
+                    firebase
+                        .firestore()
+                        .collection('user')
+                        .doc(email)
+                        .set(userObj)
+                        .then(() => {
+                            props.history.push('/dashboard')
+                        }, dbError => {
+                            console.log(dbError);
+                            setSignUpError('Failed to add user');
+                        })
+                }, authError => {
+                    console.log(authError);
+                    setSignUpError('Failed to add user');
+                })
+        }
     }
 
-}
-
-export default withStyles(styles)(SignupComponent);
+export default withStyles(styles)(SignUpComponent);
